@@ -21,7 +21,7 @@ public class HomeController {
         return movieService;
     }
 
-    @RequestMapping("dvdstore-home")
+    @RequestMapping("/dvdstore-home")
     public @ModelAttribute("movies") List<Movie> displayHome(){
         return movieService.getMovieList();
     }
