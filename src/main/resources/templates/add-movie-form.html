@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DvdStore</title>
+</head>
+<body>
+<h1>Ajout de film</h1>
+<table border="8">
+<form th:action="@{/movie}" th:object="${movie}" method="post">
+    <p>Titre<input type="text" th:field="*{title}"/></p>
+    <p>Genre<input type="text" th:field="*{genre}"/></p>
+    <p>Description<input type="text" th:field="*{summary}"/></p>
+    <input type="submit" value="Ajouter"/>
+</form>
+   </table>
+   </body>
+   </html>

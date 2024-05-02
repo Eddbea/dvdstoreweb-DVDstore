@@ -3,6 +3,7 @@ package com.mycompany.dvdstore.dvdstoreweb.controller;
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -21,8 +22,12 @@ public class HomeController {
         return movieService;
     }
 
-    @RequestMapping("/dvdstore-home")
+    @GetMapping("/dvdstore-home")
     public @ModelAttribute("movies") List<Movie> displayHome(){
         return movieService.getMovieList();
+    }
+
+    @GetMapping("add-movie-form")
+    public void displayMovieForm(@ModelAttribute Movie movie){
     }
 }
