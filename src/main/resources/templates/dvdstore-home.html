@@ -7,14 +7,15 @@
 <body>
 <h1>DvdStore : La boutique de DVD en ligne</h1>
 <table border="8">
+    <p><a href="add-movie-form">Ajout de film</a></p>
+
+
     <tr th:each="movie: ${movies}">
         <td>
             <a th:href="@{'/movie/'+${movie.id}}" th:text="${movie.title}"/>
-            <!--   <a th:href="@{/movie/{id}(id=${movie.id})}" th:text="${movie.title}"/>-->
            </td>
            <td th:text="${movie.genre}"></td>
        </tr>
    </table>
-
    </body>
    </html>
