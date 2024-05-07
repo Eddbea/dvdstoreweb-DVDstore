@@ -43,8 +43,6 @@ public class MovieController {
             movie.setSummary(movieForm.getSummary());
             movieService.registerMovie(movie);
         }
-
-
         return"movie-added";
     }
 }
