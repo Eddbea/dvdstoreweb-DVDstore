@@ -31,7 +31,7 @@ public class MovieController {
         return "movie-details";
     }*/
 
-    /*@PostMapping
+    @PostMapping("add")
     public String addMovie(@Valid @ModelAttribute MovieForm movieForm, BindingResult results){
         if(results.hasErrors()){
             return "add-movie-form";
@@ -44,5 +44,5 @@ public class MovieController {
             movieService.registerMovie(movie);
         }
         return"movie-added";
-    }*/
+    }
 }

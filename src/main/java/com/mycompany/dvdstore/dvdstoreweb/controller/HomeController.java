@@ -7,8 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+
 
 @Controller
 public class HomeController {
@@ -23,10 +24,8 @@ public class HomeController {
         return movieService;
     }
 
-    @GetMapping("/dvdstore-home")
-    public @ModelAttribute("movies") List<Movie> displayHome(){
-        System.out.println("HomeController: displayHome");
-        return movieService.getMovieList();
+    @GetMapping("dvdstore-home")
+    public void displayHome(){
     }
 
     @GetMapping("add-movie-form")
