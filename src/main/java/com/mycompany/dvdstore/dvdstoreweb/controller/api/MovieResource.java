@@ -1,7 +1,6 @@
-package com.mycompany.dvdstore.dvdstoreweb.controller;
+package com.mycompany.dvdstore.dvdstoreweb.controller.api;
 
 import com.mycompany.dvdstore.core.entity.Movie;
-import com.mycompany.dvdstore.core.service.DefaultMovieService;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
 import com.mycompany.dvdstore.dvdstoreweb.controller.form.MovieForm;
 import jakarta.validation.Valid;
@@ -10,11 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/movie")
-public class MovieController {
+import java.util.List;
 
-    public MovieController(MovieServiceInterface movieService) {
+@RestController
+@RequestMapping("movie")
+public class MovieResource {
+
+    public MovieResource(MovieServiceInterface movieService) {
         this.movieService = movieService;
     }
 
@@ -24,25 +25,25 @@ public class MovieController {
         return movieService;
     }
 
-    /*@GetMapping("/{id}")
-    public String displayMovieCard(@PathVariable("id")long id, Model model){
-        model.addAttribute("movie", movieService.getMovieById(id));
-        System.out.println("Methode displayMovieCard invoquee");
-        return "movie-details";
-    }*/
+    @GetMapping("{id}")
+    public Movie get(@PathVariable("id")long id){
+        System.out.println("Methode getnew displayMovieCard invoquee");
+        return movieService.getMovieById(id);
+    }
 
-    /*@PostMapping
-    public String addMovie(@Valid @ModelAttribute MovieForm movieForm, BindingResult results){
-        if(results.hasErrors()){
-            return "add-movie-form";
-        }
-        else {
+    @PostMapping
+    public Movie add(@RequestBody MovieForm movieForm){
             Movie movie = new Movie();
             movie.setTitle(movieForm.getTitle());
             movie.setGenre(movieForm.getGenre());
             movie.setSummary(movieForm.getSummary());
             movieService.registerMovie(movie);
-        }
-        return"movie-added";
-    }*/
+        return movie;
+    }
+
+    @GetMapping
+    public List<Movie> list(){
+        System.out.println("list : displayHome");
+        return movieService.getMovieList();
+    }
 }

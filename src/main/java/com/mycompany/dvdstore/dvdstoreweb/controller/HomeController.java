@@ -25,6 +25,7 @@ public class HomeController {
 
     @GetMapping("/dvdstore-home")
     public @ModelAttribute("movies") List<Movie> displayHome(){
+        System.out.println("HomeController: displayHome");
         return movieService.getMovieList();
     }
 
