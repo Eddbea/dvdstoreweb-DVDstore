@@ -39,7 +39,6 @@ fetch('movie')
 
     });
 
-
 function showDetail(id){
     fetch("movie/"+id)
     .then(res => res.json())
@@ -58,9 +57,11 @@ function showDetail(id){
         invoiceDetailNode.appendChild(p);
 
         p = document.createElement("p");
-        text = document.createTextNode(`Description: ${res.description}`);
+        text = document.createTextNode(`Description: ${res.summary}`);
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
+        console.log(res);
+        console.log(res.summary);
 
     });
 }
