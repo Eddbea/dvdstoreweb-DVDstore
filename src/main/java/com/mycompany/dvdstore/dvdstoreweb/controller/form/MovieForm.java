@@ -2,7 +2,6 @@ package com.mycompany.dvdstore.dvdstoreweb.controller.form;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import org.springframework.stereotype.Service;
 
 public class MovieForm {
 
@@ -13,14 +12,14 @@ public class MovieForm {
     private String genre;
     private Long id;
     @Size(min=1, max=255, message = "Entrez une description de 255 caracteres au plus")
-    private String summary;
+    private String description;
 
-    public String getSummary() {
-        return summary;
+    public String getDescription() {
+        return description;
     }
 
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getId() {

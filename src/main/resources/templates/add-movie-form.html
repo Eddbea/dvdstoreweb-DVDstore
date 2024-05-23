@@ -21,8 +21,8 @@
         </select>
         </p>
         <div th:if="${#fields.hasErrors('genre')}" th:errors="*{genre}"></div>
-        <p><textarea class="form-control" rows="5" placeholder="Description" th:field="*{summary}"></textarea></p>
-            <div th:if="${#fields.hasErrors('summary')}" th:errors="*{summary}"></div>
+        <p><textarea class="form-control" rows="5" placeholder="Description" th:field="*{description}"></textarea></p>
+            <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
             <input type="submit" value="Ajouter"/>
     </form>
 </body>

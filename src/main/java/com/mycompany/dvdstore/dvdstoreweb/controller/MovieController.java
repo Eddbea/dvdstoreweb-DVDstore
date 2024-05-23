@@ -35,12 +35,12 @@ public class MovieController {
             return "add-movie-form";
         }
         else {
-            Movie movie = new Movie(rs.getLong("ID"), rs.getString("TITLE"), rs.getString("GENRE"));
+            Movie movie = new Movie();
             movie.setTitle(movieForm.getTitle());
             movie.setGenre(movieForm.getGenre());
-            movie.setSummary(movieForm.getSummary());
+            movie.setDescription(movieForm.getDescription());
             movieService.registerMovie(movie);
+            return"movie-added";
         }
-        return"movie-added";
     }
 }

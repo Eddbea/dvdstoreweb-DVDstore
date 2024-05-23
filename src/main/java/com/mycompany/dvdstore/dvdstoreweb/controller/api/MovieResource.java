@@ -28,18 +28,13 @@ public class MovieResource {
     }
 
     @PostMapping
-    public Movie add(@RequestBody MovieForm movieForm){
-            Movie movie = new Movie(rs.getLong("ID"), rs.getString("TITLE"), rs.getString("GENRE"));
-            movie.setTitle(movieForm.getTitle());
-            movie.setGenre(movieForm.getGenre());
-            movie.setSummary(movieForm.getSummary());
-            movieService.registerMovie(movie);
-        return movie;
+    public Movie add(@RequestBody Movie movie){
+        return  movieService.registerMovie(movie);
+
     }
 
     @GetMapping
-    public List<Movie> list(){
-        System.out.println("list : displayHome");
+    public Iterable<Movie> list(){
         return movieService.getMovieList();
     }
 }
