@@ -23,13 +23,13 @@ public class MovieResource {
 
     @GetMapping("{id}")
     public Movie get(@PathVariable("id")long id){
-        System.out.println("Methode getnew displayMovieCard invoquee");
+        System.out.println("Methode get new displayMovieCard invoquee");
         return movieService.getMovieById(id);
     }
 
     @PostMapping
     public Movie add(@RequestBody Movie movie){
-        return  movieService.registerMovie(movie);
+        return movieService.registerMovie(movie);
 
     }
 
