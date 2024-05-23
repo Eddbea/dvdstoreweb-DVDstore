@@ -3,10 +3,6 @@ package com.mycompany.dvdstore.dvdstoreweb.controller.api;
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
 import com.mycompany.dvdstore.dvdstoreweb.controller.form.MovieForm;
-import jakarta.validation.Valid;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,7 +29,7 @@ public class MovieResource {
 
     @PostMapping
     public Movie add(@RequestBody MovieForm movieForm){
-            Movie movie = new Movie();
+            Movie movie = new Movie(rs.getLong("ID"), rs.getString("TITLE"), rs.getString("GENRE"));
             movie.setTitle(movieForm.getTitle());
             movie.setGenre(movieForm.getGenre());
             movie.setSummary(movieForm.getSummary());
