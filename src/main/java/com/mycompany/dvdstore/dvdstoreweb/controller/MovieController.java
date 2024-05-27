@@ -2,7 +2,7 @@ package com.mycompany.dvdstore.dvdstoreweb.controller;
 
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
-import com.mycompany.dvdstore.dvdstoreweb.controller.form.MovieForm;
+import com.mycompany.dvdstore.dvdstoreweb.form.MovieForm;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;

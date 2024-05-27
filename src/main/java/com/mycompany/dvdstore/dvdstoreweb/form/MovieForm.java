@@ -1,4 +1,4 @@
-package com.mycompany.dvdstore.dvdstoreweb.controller.form;
+package com.mycompany.dvdstore.dvdstoreweb.form;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

@@ -1,14 +1,10 @@
 package com.mycompany.dvdstore.dvdstoreweb.controller;
 
-import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
-import com.mycompany.dvdstore.dvdstoreweb.controller.form.MovieForm;
+import com.mycompany.dvdstore.dvdstoreweb.form.MovieForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 
 
 @Controller
