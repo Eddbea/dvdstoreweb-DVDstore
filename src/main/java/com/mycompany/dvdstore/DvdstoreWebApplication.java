@@ -1,7 +1,9 @@
 package com.mycompany.dvdstore;
 
+import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class DvdstoreWebApplication {
@@ -10,4 +12,6 @@ public class DvdstoreWebApplication {
 		SpringApplication.run(DvdstoreWebApplication.class, args);
 	}
 
+	@Bean
+	public Hibernate5Module datatypeHibernate5Module() {return new Hibernate5Module();}
 }
