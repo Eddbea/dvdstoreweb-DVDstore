@@ -67,6 +67,9 @@ function showDetail(id){
         text = document.createTextNode(`Main actor: ${res.mainActor.firstName} ${res.mainActor.lastName}`);
         p.appendChild(text)
         invoiceDetailNode.appendChild(p);
+        console.log(res);
+        console.log(res.mainActor.firstName);
+        console.log(res.mainActor.lastName);
 
         p = document.createElement("p");
         var sum = res.reviews.map((a)=> a.mark).reduce((a,b) => a + b, 0);
@@ -74,6 +77,8 @@ function showDetail(id){
         text = document.createTextNode(`Mark: ${avg}/5`);
         p.appendChild(text);
         invoiceDetailNode.appendChild(p);
+        console.log(res);
+        console.log(res.reviews);
 
     });
 }
