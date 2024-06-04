@@ -1,5 +1,6 @@
 package com.mycompany.dvdstore.dvdstoreweb.controller;
 
+import com.mycompany.dvdstore.core.entity.Actor;
 import com.mycompany.dvdstore.core.entity.Movie;
 import com.mycompany.dvdstore.core.service.MovieServiceInterface;
 import com.mycompany.dvdstore.dvdstoreweb.form.MovieForm;
@@ -38,6 +39,10 @@ public class MovieController {
         }
         else {
             Movie movie = new Movie();
+            Actor mainActor = new Actor();
+            mainActor.setFirstName(movieForm.getFirstName());
+            mainActor.setLastName(movieForm.getLastName());
+            movie.setMainActor(mainActor);
             movie.setTitle(movieForm.getTitle());
             movie.setGenre(movieForm.getGenre());
             movie.setDescription(movieForm.getDescription());
